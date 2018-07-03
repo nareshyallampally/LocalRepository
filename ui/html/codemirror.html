@@ -1,0 +1,70 @@
+<!doctype html>
+<title>CodeMirror: C-like mode</title>
+<meta charset="utf-8" />
+<script src="/scripts/vendor/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/css/docs.css" />
+<link rel="stylesheet" type="text/css" href="/css/vendor/codemirror/5.36.0/codemirror.css">
+<link rel="stylesheet" href="/css/vendor/codemirror/5.36.0/addon/hint/show-hint.css">
+<script src="/scripts/vendor/codemirror/5.36.0/codemirror.js"></script>
+<script src="/scripts/vendor/codemirror/5.36.0/addon/edit/matchbrackets.js"></script>
+<script src="/scripts/vendor/codemirror/5.36.0/addon/hint/show-hint.js"></script>
+<script src="/scripts/vendor/codemirror/5.36.0/mode/clike/clike.js"></script>
+<script src="/scripts/vendor/codemirror/5.36.0/mode/javascript/javascript.js"></script>
+<script src="/scripts/vendor/codemirror/5.36.0/mode/css/css.js"></script>
+<script src="/scripts/vendor/codemirror/5.36.0/addon/selection/mark-selection.js"></script>
+<script src="/scripts/vendor/codemirror/5.36.0/addon/search/searchcursor.js"></script>
+<script type="text/javascript" src="/scripts/code.js"></script>
+<link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://assets-cdn.github.com/favicon.ico">
+<script src="/scripts/vendor/jquery/3.3.1/jquery.min.js"></script>
+<script src="/scripts/vendor/bootstrap/4.0.0/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/vendor/bootstrap/4.0.0/bootstrap.min.css">
+<link rel="stylesheet" href="/css/main.css" />
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+
+<style>
+    .CodeMirror {
+        border: 2px inset #dee;
+        /*height:80%;*/
+    }
+
+    .styled-background {
+        background-color: green;
+    }
+</style>
+<nav class="navbar navbar-expand-sm navbar-dark  bg-info  mr-auto">
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <select class="form-control form-control-sm" id="themeSelection">
+    </select>
+            </li>
+            <li class="nav-item dropdown ml-3">
+                <select class="form-control form-control-sm" id="mode">
+      <option value="c-code">c</option>
+      <option value="cpp-code">c++</option>
+      <option value="csharp-code">csharp</option>
+      <option value="css-code">css</option>
+      <option value="java-code">java</option>
+    </select>
+            </li>
+            <li class="nav-item dropdown ml-3">
+                <select class="form-control form-control-sm" id="numselect">
+</select>
+            </li>
+            <li>
+                <button type="button" id="btnselect" class="btn btn-primary btn-sm ml-3">Select All</button>
+                <button type="button" id="btndeselect" class="btn btn-secondary btn-sm ml-2">Deselect All</button>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+    <div><textarea id="editor_window">
+</textarea></div>
+
+    <p>Simple mode that tries to handle C-like languages as well as it can. Takes two configuration parameters: <code>keywords</code>, an object whose property names are the keywords in the language, and <code>useCPP</code>, which determines whether C preprocessor directives are recognized.</p>
+
+    <p><strong>MIME types defined:</strong> <code>text/x-csrc</code> (C code), <code>text/x-c++src</code> (C++ code), <code>text/x-java</code> (Java code), <code>text/x-csharp</code> (C#).</p>
+
